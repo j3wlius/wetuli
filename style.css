@@ -5,6 +5,9 @@
 
   /* Colors */
   --white: #fff;
+  --duke-blue: hsl(239, 89%, 32%);
+  --tangerine: hsl(33, 94%, 49%);
+  --apple-green: hsl(79, 100%, 36%);
 }
 
 /* CSS Reset */
@@ -74,15 +77,21 @@ html {
   margin: 0 auto;
 }
 
-/* Header Styles */
-.top-row {
-  display: none;
-}
-
-.top-row .container {
+.top-row .container,
+.middle-row .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+/* Header Styles */
+.top-row {
+  display: none;
+  background-color: var(--duke-blue);
+  color: var(--white);
+}
+
+.top-row .container {
   height: 30px;
 }
 
@@ -108,12 +117,123 @@ html {
 }
 
 .top-row a:hover {
-  color: green;
+  color: var(--tangerine);
+}
+
+.middle-row {
+  background-color: var(--apple-green);
+  height: 10vh;
+  display: flex;
+}
+
+.mobile-btns {
+  display: flex;
+  font-size: 1.8rem;
+  align-items: center;
+}
+
+.mobile-btns .cta-btn {
+  position: relative;
+}
+
+.mobile-btns ion-icon {
+  font-size: 30px;
+  margin-right: 10px;
+}
+
+.count {
+  position: absolute;
+  top: -0.35rem;
+  right: -0.2rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--white);
+  background-color: var(--duke-blue);
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.checkbox {
+  display: none;
+}
+
+.toggle {
+  position: relative;
+  left: 20px;
+  width: 40px;
+  height: 30px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition-duration: 0.5s;
+}
+
+.bars {
+  width: 100%;
+  height: 4px;
+  background-color: #000;
+  border-radius: 4px;
+}
+
+#bar2 {
+  transition-duration: 0.8s;
+}
+
+.active + .toggle .bars {
+  position: absolute;
+  transition-duration: 0.5s;
+}
+
+.active + .toggle #bar2 {
+  transform: scaleX(0);
+  transition-duration: 0.5s;
+}
+
+.active + .toggle #bar1 {
+  width: 100%;
+  transform: rotate(45deg);
+  transition-duration: 0.5s;
+}
+
+.active + .toggle #bar3 {
+  width: 100%;
+  transform: rotate(-45deg);
+  transition-duration: 0.5s;
+}
+
+.active + .toggle {
+  transition-duration: 0.5s;
+  transform: rotate(180deg);
+}
+
+.logo {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.desktop-btns {
+  display: none;
 }
 
 /* Media Queries */
 @media screen and (min-width: 992px) {
   .top-row {
     display: block;
+  }
+
+  .mobile-btns {
+    display: none;
+  }
+
+  .desktop-btns {
+    display: flex;
   }
 }
