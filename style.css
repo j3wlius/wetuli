@@ -1,0 +1,119 @@
+/* CSS Variables */
+:root {
+  /* Font */
+  --font-poppins: "Poppins", sans-serif;
+
+  /* Colors */
+  --white: #fff;
+}
+
+/* CSS Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  height: auto;
+}
+
+button,
+input {
+  border: none;
+  outline: none;
+  font: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+a,
+button,
+input,
+textarea,
+select,
+img,
+ion-icon {
+  display: block;
+}
+
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+  font-family: var(--font-poppins);
+}
+
+::-webkit-scrollbar {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #404040;
+  border-radius: 0.5rem;
+}
+/* CSS Reset End */
+
+/* General Styles */
+.container {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header Styles */
+.top-row {
+  display: none;
+}
+
+.top-row .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+}
+
+.top-row .container > div,
+.contact-info > p,
+.location > p {
+  display: flex;
+  align-items: center;
+  font-size: 1.25rem;
+}
+
+.social-icons {
+  gap: 15px;
+}
+
+.location > p,
+.contact-info > p {
+  font-weight: bolder;
+}
+
+.contact-info ion-icon {
+  margin-inline: 10px 4px;
+}
+
+.top-row a:hover {
+  color: green;
+}
+
+/* Media Queries */
+@media screen and (min-width: 992px) {
+  .top-row {
+    display: block;
+  }
+}
